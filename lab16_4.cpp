@@ -17,3 +17,16 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &x, int &y, int &z, int &w){
+	const int N = 4;
+	int *box[] = {&x, &y, &z, &w};
+
+	int temp, ptr;
+	for(int i = N-1; i > 1; i--){
+		ptr = rand()%(i+1);
+		temp = *box[i];
+		*box[i] = *box[ptr];
+		*box[ptr] = temp;
+	}
+}
